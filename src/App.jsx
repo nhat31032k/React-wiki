@@ -44,7 +44,7 @@ function App() {
   const handleSearch = async (e) => {
     if (search === "") return;
     e.preventDefault();
-    const enpoint = `https://vi.wikipedia.org/w/api.php?action=query&list=search&prop=info&inprop=url&utf8=&format=json&origin=*&srlimit=20&srsearch=${search}`;
+    const enpoint = `https://vi.wikipedia.org/w/api.php?action=query&list=search&prop=info&inprop=url&utf8=&format=json&origin=*&srlimit=200&srsearch=${search}`;
 
     const res = await fetch(enpoint);
     console.log(res);
