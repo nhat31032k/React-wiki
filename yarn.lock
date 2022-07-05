@@ -663,8 +663,11 @@
     "@jridgewell/sourcemap-codec" "^1.4.10"
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
+>>>>>>> 0a220d5371d1cd5581088bcbf59d65ec4284af66
+=======
 >>>>>>> 0a220d5371d1cd5581088bcbf59d65ec4284af66
 "@nodelib/fs.scandir@2.1.5":
   "integrity" "sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g=="
@@ -685,6 +688,7 @@
   "version" "1.2.8"
   dependencies:
     "@nodelib/fs.scandir" "2.1.5"
+<<<<<<< HEAD
     "fastq" "^1.6.0"
 
 "@protobufjs/aspromise@^1.1.1", "@protobufjs/aspromise@^1.1.2":
@@ -742,6 +746,12 @@
 
 <<<<<<< HEAD
 =======
+=======
+>>>>>>> 0129257db25342e0afc1d400441b844161ee7599
+>>>>>>> 0a220d5371d1cd5581088bcbf59d65ec4284af66
+=======
+    fastq "^1.6.0"
+
 =======
 >>>>>>> 0129257db25342e0afc1d400441b844161ee7599
 >>>>>>> 0a220d5371d1cd5581088bcbf59d65ec4284af66
@@ -2801,4 +2811,7 @@ yaml@^1.10.2:
   integrity sha512-r3vXyErRCYJ7wg28yvBY5VSoAF8ZvlcW9/BwUzEtUsjvX/DKs24dIkuwjtuprwJJHsbyUbLApepYTR1BN4uHrg==
 =======
 >>>>>>> 0129257db25342e0afc1d400441b844161ee7599
+<<<<<<< HEAD
+>>>>>>> 0a220d5371d1cd5581088bcbf59d65ec4284af66
+=======
 >>>>>>> 0a220d5371d1cd5581088bcbf59d65ec4284af66

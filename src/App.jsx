@@ -3,6 +3,7 @@ import logo from "./logo.svg";
 
 import "./App.scss";
 <<<<<<< HEAD
+<<<<<<< HEAD
 import ScrollToTop from "react-scroll-to-top";
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
@@ -27,18 +28,26 @@ const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> 0a220d5371d1cd5581088bcbf59d65ec4284af66
 import ScrollToTop from "react-scroll-to-top";
 =======
 
 >>>>>>> 0129257db25342e0afc1d400441b844161ee7599
+<<<<<<< HEAD
+>>>>>>> 0a220d5371d1cd5581088bcbf59d65ec4284af66
+=======
 >>>>>>> 0a220d5371d1cd5581088bcbf59d65ec4284af66
 function App() {
   const [search, setSearch] = useState("");
   const [result, setSult] = useState([]);
   const [searchInfo, setSearchInfo] = useState({});
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
+>>>>>>> 0a220d5371d1cd5581088bcbf59d65ec4284af66
+=======
 >>>>>>> 0a220d5371d1cd5581088bcbf59d65ec4284af66
   const [loading,setLoading] = useState(true);
   const handleSearch = async (e) =>
@@ -48,13 +57,19 @@ function App() {
     e.preventDefault();
     const enpoint = `https://vi.wikipedia.org/w/api.php?action=query&list=search&prop=info&inprop=url&utf8=&format=json&origin=*&srlimit=200&srsearch=${search}`;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 0a220d5371d1cd5581088bcbf59d65ec4284af66
 =======
   const handleSearch = async (e) => {
     if (search === "") return;
     e.preventDefault();
     const enpoint = `https://vi.wikipedia.org/w/api.php?action=query&list=search&prop=info&inprop=url&utf8=&format=json&origin=*&srlimit=20&srsearch=${search}`;
 >>>>>>> 0129257db25342e0afc1d400441b844161ee7599
+<<<<<<< HEAD
+>>>>>>> 0a220d5371d1cd5581088bcbf59d65ec4284af66
+=======
 >>>>>>> 0a220d5371d1cd5581088bcbf59d65ec4284af66
     const res = await fetch(enpoint);
     console.log(res);
@@ -65,13 +80,19 @@ function App() {
     setSult(data.query.search);
     setSearchInfo(data.query.searchinfo);
 <<<<<<< HEAD
+<<<<<<< HEAD
     setLoading(false);
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> 0a220d5371d1cd5581088bcbf59d65ec4284af66
     setLoading(false);
 =======
 
 >>>>>>> 0129257db25342e0afc1d400441b844161ee7599
+<<<<<<< HEAD
+>>>>>>> 0a220d5371d1cd5581088bcbf59d65ec4284af66
+=======
 >>>>>>> 0a220d5371d1cd5581088bcbf59d65ec4284af66
     console.log(data);
   };
@@ -88,14 +109,23 @@ function App() {
           />
         </form>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
+>>>>>>> 0a220d5371d1cd5581088bcbf59d65ec4284af66
+=======
 >>>>>>> 0a220d5371d1cd5581088bcbf59d65ec4284af66
          {loading && (
            <div className="w-8 h-8 mx-auto my-10 rounded-full border-blue-500 border-4 border-r-4 border-r-transparent animate-spin"></div>
           )}
         {!loading && searchInfo.totalhits ? (
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+        {searchInfo.totalhits ? (
+>>>>>>> 0129257db25342e0afc1d400441b844161ee7599
+>>>>>>> 0a220d5371d1cd5581088bcbf59d65ec4284af66
 =======
 =======
         {searchInfo.totalhits ? (
@@ -107,19 +137,28 @@ function App() {
         )}
       </header>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
+>>>>>>> 0a220d5371d1cd5581088bcbf59d65ec4284af66
+=======
 >>>>>>> 0a220d5371d1cd5581088bcbf59d65ec4284af66
         
       <div className="results">
         <ScrollToTop smooth color="#6f00ff" />
         {!loading && result.map((item, index) => {
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 0a220d5371d1cd5581088bcbf59d65ec4284af66
 =======
       <div className="results">
         {result.map((item, index) => {
 >>>>>>> 0129257db25342e0afc1d400441b844161ee7599
+<<<<<<< HEAD
+>>>>>>> 0a220d5371d1cd5581088bcbf59d65ec4284af66
+=======
 >>>>>>> 0a220d5371d1cd5581088bcbf59d65ec4284af66
           const url = `https://vi.wikipedia.org/?curid=${item.pageid}`;
           return (
