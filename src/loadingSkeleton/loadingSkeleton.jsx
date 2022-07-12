@@ -5,11 +5,13 @@ const loadingSkeleton = (props) =>
 {
     console.log(props);
     return (
-        <div className='skeleton' style={{
+        <div className='skeleton'
+            style={{
             height: props.height,
             width: props.width,
             borderRadius: props.radius,
-        }}>
+            }}
+        >
             
         </div>
     );

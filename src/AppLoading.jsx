@@ -17,7 +17,7 @@ const AppLoading = () => {
                 <LoadingSkeleton width="420px" height="15px" /> */}
             </p>
             <a className='inline-block p-[12px_16px] !bg-[#ffff]'>
-               <LoadingSkeleton width="60px" height="30px"/>
+                <LoadingSkeleton width="60px" height="30px"/>
             </a>
         </div>
     );

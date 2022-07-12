@@ -1,4 +1,4 @@
-import { useState,useEffect  } from "react";
+import { useState, useEffect } from "react";
 import "./App.scss";
 import ScrollToTop from "react-scroll-to-top";
 // Import the functions you need from the SDKs you need
@@ -6,6 +6,10 @@ import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import AppLoading from "./AppLoading";
 import useDebounce from "./hooks/useDebounce";
+import useSWR from "swr";
+import { fetcher } from "./config/config"
+// import {updateSearch ,updateResult, updateLoading} from "././store/searchSlice";
+// import { useSelector, useDispatch } from "react-redux";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -25,36 +29,29 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 
-// import ScrollToTop from "react-scroll-to-top";
-
-function App() {
-    const [search, setSearch] = useState("");
-    const [result, setSult] = useState([]);
-    const [searchInfo, setSearchInfo] = useState({});
-    const [loading, setLoading] = useState(true);
-    const deBoundSearch = useDebounce(search, 1000);
+function App()
+{
+  const [search, setSearch] = useState("");
+  const [result, setSult] = useState([]);
+  const [searchInfo, setSearchInfo] = useState({});
+  const [loading, setLoading] = useState(true);
+  const deBoundSearch = useDebounce(search, 1000);
+  const enpoint = `https://vi.wikipedia.org/w/api.php?action=query&list=search&prop=info&inprop=url&utf8=&format=json&origin=*&srlimit=200&srsearch=${search}`;
+  const { data, error } = useSWR(enpoint, fetcher);
   useEffect(() =>
   {
-    if (deBoundSearch) { 
+    if (deBoundSearch) {
       const fetchData = async () =>
-    {
-      setLoading(true);
-      const enpoint = `https://vi.wikipedia.org/w/api.php?action=query&list=search&prop=info&inprop=url&utf8=&format=json&origin=*&srlimit=200&srsearch=${search}`;
-      const res = await fetch(enpoint);
-      console.log(res);
-      if (!res.ok) {
-        throw new Error(res.statusText);
+      {
+        setLoading(true);
+        if (data.query.search) {
+          setSult(data.query.search);
+
+          setLoading(false);
+        }
       }
-      const data = await res.json();
-      if (data.query.search) { 
-        setSult(data.query.search);
-        
-        setLoading(false);
-      }
-      console.log(data);
+      fetchData();
     }
-    fetchData();
-  }  
   }, [deBoundSearch]);
   const handleSearch = async (e) =>
   {
@@ -81,11 +78,12 @@ function App() {
         )}
       </header>
       <div className="results">
-        {loading && <AppLoading/>}
+        {loading && <AppLoading />}
         <ScrollToTop smooth color="#6f00ff" />
-        {!loading && result.map((item, index) => {
-          
-      {/* <div className="results">
+        {!loading && result.map((item, index) =>
+        {
+
+          {/* <div className="results">
         {result.map((item, index) => { */}
 
           const url = `https://vi.wikipedia.org/?curid=${item.pageid}`;
@@ -100,7 +98,7 @@ function App() {
           );
         })}
       </div>
-      </div>
+    </div>
   );
 }
 
