@@ -74,10 +74,6 @@ function App() {
             onChange={(e) => setSearch(e.target.value)}
           />
         </form>
-
-         {/* {loading && (
-           <div className="w-8 h-8 mx-auto my-10 rounded-full border-blue-500 border-4 border-r-4 border-r-transparent animate-spin"></div>
-          )} */}
         {!loading && searchInfo.totalhits ? (
           <p>Kết quả tìm kiếm: {searchInfo.totalhits}</p>
         ) : (
